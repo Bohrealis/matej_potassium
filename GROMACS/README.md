@@ -31,10 +31,10 @@ Generated files:
 * trr file - uncompressed trajectory, contains coordinates and velocities of all atoms at all timesteps
 * edr file - energy file, not really used by us
 
-  File naming:
+File naming:
 
-  I like to use the naming scheme:
+I like to use the naming scheme:
 
-  ProjectName.StepName.fileextension
+ProjectName.StepName.fileextension
 
-  Where project name is some overall tag for the simulation I'm trying to run. Step name is usually "min" for minimization, "eq" or a variation of that for equilibration and then "prod" for production runs.
+Where project name is some overall tag for the simulation I'm trying to run. Step name is usually "min" for minimization, "eq" or a variation of that for equilibration and then "prod" for production runs.
