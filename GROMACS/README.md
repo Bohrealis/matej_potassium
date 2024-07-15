@@ -4,6 +4,10 @@
 
 It turned out that the ColdEq files and runs were totally unnecessary but I kept them here just the same. The annealing could probably be edited to cool a bit quicker and freeze configuration slightly more than it currently does. A more frequent writing to the trajectory (smaller value for nstxout) would be nice for a smoother trajectory, but makes a larger file.
 
+# Jobs
+
+Job files are written for a different cluster, not Aurum or personal computer. The prep for running it will definitely change depending on your system, but it provides a good example of how options are set and which options are used in a GROMACS simulation, so I kept them. 
+
 # Files and File types
 
 System topology - .top file, see documentation
