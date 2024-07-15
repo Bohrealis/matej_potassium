@@ -1,0 +1,19 @@
+# General
+SYSTEM = 1K+ 16H2O    ! just a name for your own notes
+IBRION = 1            ! moves atom centers with RMM-DIIS algorithm, geometry optimization
+NELECT = 178          ! sets number of electrons total so that we simulate K+ rather than K
+ISMEAR = 0            ! just keep this and sigma
+SIGMA = 0.075
+EDIFF = 1E-7          ! how precise you want to be in solving wavefunction, this is VERY precise because GGA is cheap
+ENCUT = 400           ! essentially the size of your basis set, make bigger for a larger basis
+NBANDS = 178          ! how many orbitals we want to compute. 10 e- per H2O, 18 e- per K, so 178 e-, 89 bands, double for empty states
+PREC = Normal
+
+# DFT
+ALGO = Normal         ! tells it how to handle wavefunction calculation
+GGA = RE              ! sets the revised PBE DFT functional, should be fine and quick start point
+
+# Other
+LREAL = AUTO          ! force real wavefunctions
+NCORE = 4             ! parallelization settings
+KPAR = 1              ! parallelization settings
