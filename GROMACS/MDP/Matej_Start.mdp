@@ -1,0 +1,72 @@
+ title		= NVT equilibration - water/urea box
+;define		= 
+; Run parameters
+integrator	= md		; leap-frog integrator
+nsteps		= 50000 	; 2 * 50000 = 100 ps
+dt		= 0.002		; 2 fs
+comm-mode       = angular
+nstcomm         = 1
+nstcalcenergy   = 0
+; Output control
+nstxout		= 5000		; save coordinates every 4 ps
+nstvout		= 20000		; save velocities every 40 ps
+nstenergy	= 20000		; save energies every 40 ps
+nstlog		= 100000		; update log file every 200 ps
+energygrps      =   system
+; Bond parameters
+continuation	= no            ; continuation after NVT
+constraint_algorithm = lincs	; holonomic constraints 
+constraints	= h-bonds	; all bonds (even heavy atom-H bonds) constrained
+lincs_iter	= 1		; accuracy of LINCS
+lincs_order	= 4		; also related to accuracy
+lincs-warnangle = 30	; 
+
+; Neighborsearching
+nstlist		= 1   	        ; one and done fs
+cutoff-scheme			= Verlet
+verlet-buffer-tolerance = -1
+rlist                   = 1.4
+
+vdw-type                = Cut-off
+vdw_modifier			= none
+coulombtype             = cut-off
+
+; Apply long range dispersion corrections for Energy and Pressure
+;DispCorr        = EnerPres
+; Extension of the potential lookup tables beyond the cut-off
+;table-extension = 1
+
+;pme_order	= 4		; cubic interpolation
+;ewald_rtol      = 1e-05
+;ewald_geometry  = 3d
+;epsilon_surface = 0
+
+; Temperature coupling is on
+tcoupl		= v-rescale ;
+nh-chain-length = 1
+tc-grps		= system  	; one coupling groups - more accurate
+tau_t		= 0.5       ; time constant, in ps
+ref_t		= 50	; reference temperature, one for each group, in K
+
+; Pressure coupling is off
+pcoupl		=  no		; pressure coupling in NPT
+;pcoupltype      = isotropic
+;tau_p           = 1.0
+;compressibility = 1.1633e-4
+;ref_p           = 1.0135
+;refcoord-scaling	=	all
+
+; Simulated Annealing
+;annealing = single
+;annealing-npoints = 5
+;annealing-time = 0 3000 4000 5000 10000
+;annealing-temp = 298 320 320 298 298
+
+; Options for generate velocities for startup run
+gen_vel      = yes               ;Do not generate velocities at startup
+gen_temp     = 298.15              ;Temperature for Maxwell distribution
+gen_seed     = 173529           ;Used to initialize random generator for random velocities
+
+; Periodic boundary conditions
+pbc		= xyz		    ; 3-D PBC
+
