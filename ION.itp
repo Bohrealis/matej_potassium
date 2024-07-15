@@ -1,0 +1,7 @@
+[ moleculetype ]
+; molname    nrexcl
+  ION        3
+
+[ atoms ]
+; nr type resnr residu atom cgnr charge 
+  1  POT  1     ION    POT   1     1.0000
