@@ -1,0 +1,17 @@
+; Include forcefield parameters
+; Isooctane and Water 
+#include "/projects/cgale@colostate.edu/charmm36_mod.ff/forcefield.itp"
+
+; Include ion topology
+# include "ION.itp"
+
+; Include water topology
+#include "tip3p.itp"
+
+[ system ]
+; Name
+Urea Testbox
+[ molecules ]
+; Compound        #mols  
+ION                1
+SOL               16
