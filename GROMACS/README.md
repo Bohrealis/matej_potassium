@@ -1,4 +1,10 @@
-Gromacs files here:
+# GROMACS Files
+
+"Matej_Centered" is the main result, re-wrapped to be centered on the potassium ion and useful for pulling frames for a start for VASP. 
+
+It turned out that the ColdEq files and runs were totally unnecessary but I kept them here just the same. The annealing could probably be edited to cool a bit quicker and freeze configuration slightly more than it currently does. A more frequent writing to the trajectory (smaller value for nstxout) would be nice for a smoother trajectory, but makes a larger file.
+
+# Files and File types
 
 System topology - .top file, see documentation
 
