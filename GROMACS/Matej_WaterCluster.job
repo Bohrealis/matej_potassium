@@ -1,0 +1,52 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=16
+#SBATCH --cpus-per-task=2
+#SBATCH --time=1:00:00
+#SBATCH --partition=amilan
+#SBATCH --qos=normal
+#SBATCH --job-name='Matej'
+#SBATCH --output='slurm-%x.%j.out'
+
+##################################################
+# Preamble
+##################################################
+
+# loading modules
+module purge
+module load gcc/11.2.0
+module load openmpi/4.1.1
+module load gromacs/2022.4
+
+# setting up GMXLIB to include necessary locations
+export GMXLIB=${GMXLIB}:${PROJECT}/GMX/Urea_Sims/Topologies/
+
+# setting up directories
+cd "$PROJECT"/GMX/Urea_Sims/MatejCluster/
+
+##################################################
+# Running
+##################################################
+
+export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
+
+# Running Minimization 1
+mpirun --mca btl_openib_allow_ib true -np 1 gmx_mpi grompp -f ../MDP_Files/Matej_min.mdp -c WaterCluster16W1K.input.pdb -p Matej.topo.top -o WaterCluster.min.tpr -maxwarn 3
+mpirun --mca btl_openib_allow_ib true -np ${SLURM_NTASKS_PER_NODE} gmx_mpi mdrun -s WaterCluster.min.tpr -deffnm "$SCRATCH"/Urea/WaterCluster.min
+
+cp "$SCRATCH"/Urea/WaterCluster.min* ./
+
+# NVT Equilibration step
+mpirun --mca btl_openib_allow_ib true -np 1 gmx_mpi grompp -f ../MDP_Files/Matej_Start.mdp -c WaterCluster.min.gro -t WaterCluster.min.trr -p Matej.topo.top -o WaterCluster.ColdEq.tpr -maxwarn 3
+mpirun --mca btl_openib_allow_ib true -np ${SLURM_NTASKS_PER_NODE} gmx_mpi mdrun -s WaterCluster.ColdEq.tpr -deffnm "$SCRATCH"/Urea/WaterCluster.ColdEq
+
+cp "$SCRATCH"/Urea/WaterCluster.ColdEq* ./
+
+##################################################
+# Post-Processing/Cleanup
+##################################################
+
+# removing bad step pdb printouts
+rm step*.pdb
+# cleaning any repeat items
+rm \#*

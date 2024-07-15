@@ -1,0 +1,46 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=16
+#SBATCH --cpus-per-task=2
+#SBATCH --time=1:00:00
+#SBATCH --partition=amilan
+#SBATCH --qos=normal
+#SBATCH --job-name='Matej2'
+#SBATCH --output='slurm-%x.%j.out'
+
+##################################################
+# Preamble
+##################################################
+
+# loading modules
+module purge
+module load gcc/11.2.0
+module load openmpi/4.1.1
+module load gromacs/2022.4
+
+# setting up GMXLIB to include necessary locations
+export GMXLIB=${GMXLIB}:${PROJECT}/GMX/Urea_Sims/Topologies/
+
+# setting up directories
+cd "$PROJECT"/GMX/Urea_Sims/MatejCluster/
+
+##################################################
+# Running
+##################################################
+
+export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
+
+# NVT Equilibration step
+mpirun --mca btl_openib_allow_ib true -np 1 gmx_mpi grompp -f ../MDP_Files/Matej_Anneal.mdp -c WaterCluster.ColdEq.gro -t WaterCluster.ColdEq.trr -p Matej.topo.top -o WaterCluster.Anneal.tpr -maxwarn 3
+mpirun --mca btl_openib_allow_ib true -np ${SLURM_NTASKS_PER_NODE} gmx_mpi mdrun -s WaterCluster.Anneal.tpr -deffnm "$SCRATCH"/Urea/WaterCluster.Anneal
+
+cp "$SCRATCH"/Urea/WaterCluster.Anneal* ./
+
+##################################################
+# Post-Processing/Cleanup
+##################################################
+
+# removing bad step pdb printouts
+rm step*.pdb
+# cleaning any repeat items
+rm \#*
