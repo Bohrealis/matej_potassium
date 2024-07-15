@@ -19,6 +19,7 @@ Can also copy text from .itp files directly into .top file if you prefer (K and 
 Simulation options file - .mdp files, see documentation
 
 Min - a minimization option file for minimizing energy and removing bad contacts
+
 Annealing - PBC, cut-off for both Coulombic and VdW forces, NVT simulation, 10 ns with 2 fs step size saved every 10 ps
 
 Start structure - pdb from packmol
