@@ -1,0 +1,104 @@
+HEADER 
+TITLE     Built with Packmol                                             
+REMARK   Packmol generated pdb file 
+REMARK   Home-Page: http://m3g.iqm.unicamp.br/packmol
+REMARK
+CRYST1    30.00    30.00    30.00  90.00  90.00  90.00 P 1           1
+HETATM    1  POT ION A   1       5.000   5.000   5.000.00  0.00            K    
+HETATM    2   OW SOL A   2       0.871   6.815   0.7611.00  0.00            O   
+HETATM    3  HW1 SOL A   2       0.371   6.413   1.4791.00  0.00            H   
+HETATM    4  HW2 SOL A   2       0.284   6.776   0.0061.00  0.00            H   
+HETATM    5   OW SOL A   3       2.600   4.658   0.0981.00  0.00            O   
+HETATM    6  HW1 SOL A   3       2.249   4.256   0.8991.00  0.00            H   
+HETATM    7  HW2 SOL A   3       3.475   4.284   0.0021.00  0.00            H   
+HETATM    8   OW SOL A   4       3.630   7.775   3.7441.00  0.00            O   
+HETATM    9  HW1 SOL A   4       2.927   7.119   3.7031.00  0.00            H   
+HETATM   10  HW2 SOL A   4       3.949   7.845   2.8451.00  0.00            H   
+HETATM   11   OW SOL A   5       7.583   7.671   1.4091.00  0.00            O   
+HETATM   12  HW1 SOL A   5       8.114   6.956   1.7741.00  0.00            H   
+HETATM   13  HW2 SOL A   5       7.986   7.865   0.5641.00  0.00            H   
+HETATM   14   OW SOL A   6       9.056   2.378   3.2831.00  0.00            O   
+HETATM   15  HW1 SOL A   6       9.999   2.191   3.3351.00  0.00            H   
+HETATM   16  HW2 SOL A   6       8.770   1.956   2.4731.00  0.00            H   
+HETATM   17   OW SOL A   7       9.855   3.067   6.3851.00  0.00            O   
+HETATM   18  HW1 SOL A   7       9.013   2.635   6.5601.00  0.00            H   
+HETATM   19  HW2 SOL A   7       9.762   3.432   5.5051.00  0.00            H   
+HETATM   20   OW SOL A   8       8.613   6.425   8.8211.00  0.00            O   
+HETATM   21  HW1 SOL A   8       9.329   7.014   9.0801.00  0.00            H   
+HETATM   22  HW2 SOL A   8       9.052   5.645   8.4841.00  0.00            H   
+HETATM   23   OW SOL A   9       5.795   1.681   2.4191.00  0.00            O   
+HETATM   24  HW1 SOL A   9       6.647   1.623   1.9741.00  0.00            H   
+HETATM   25  HW2 SOL A   9       5.247   2.194   1.8261.00  0.00            H   
+HETATM   26   OW SOL A  10       0.544   3.391   6.6291.00  0.00            O   
+HETATM   27  HW1 SOL A  10       1.085   2.695   7.0161.00  0.00            H   
+HETATM   28  HW2 SOL A  10       1.138   4.137   6.5391.00  0.00            H   
+HETATM   29   OW SOL A  11       0.178   8.241   9.2771.00  0.00            O   
+HETATM   30  HW1 SOL A  11       0.009   7.628   9.9991.00  0.00            H   
+HETATM   31  HW2 SOL A  11       0.819   8.858   9.6281.00  0.00            H   
+HETATM   32   OW SOL A  12       6.054   8.491   5.7601.00  0.00            O   
+HETATM   33  HW1 SOL A  12       6.651   9.245   5.7331.00  0.00            H   
+HETATM   34  HW2 SOL A  12       6.326   7.994   6.5321.00  0.00            H   
+HETATM   35   OW SOL A  13       2.560   8.682   0.5451.00  0.00            O   
+HETATM   36  HW1 SOL A  13       3.134   9.410   0.2871.00  0.00            H   
+HETATM   37  HW2 SOL A  13       1.815   9.101   0.9741.00  0.00            H   
+HETATM   38   OW SOL A  14       9.113   6.677   6.0371.00  0.00            O   
+HETATM   39  HW1 SOL A  14       8.532   7.337   5.6451.00  0.00            H   
+HETATM   40  HW2 SOL A  14       9.268   6.044   5.3371.00  0.00            H   
+HETATM   41   OW SOL A  15       3.155   9.818   5.4261.00  0.00            O   
+HETATM   42  HW1 SOL A  15       2.798  10.000   4.5511.00  0.00            H   
+HETATM   43  HW2 SOL A  15       3.969   9.342   5.2621.00  0.00            H   
+HETATM   44   OW SOL A  16       2.745   0.854   7.8661.00  0.00            O   
+HETATM   45  HW1 SOL A  16       3.363   0.247   8.2851.00  0.00            H   
+HETATM   46  HW2 SOL A  16       2.361   0.352   7.1481.00  0.00            H   
+HETATM   47   OW SOL A  17       0.698   0.983   5.1101.00  0.00            O   
+HETATM   48  HW1 SOL A  17       0.278   0.715   4.2861.00  0.00            H   
+HETATM   49  HW2 SOL A  17       0.001   1.406   5.6111.00  0.00            H   
+CONECT    2    4    3
+CONECT    3    2
+CONECT    4    2
+CONECT    5    7    6
+CONECT    6    5
+CONECT    7    5
+CONECT    8   10    9
+CONECT    9    8
+CONECT   10    8
+CONECT   11   13   12
+CONECT   12   11
+CONECT   13   11
+CONECT   14   16   15
+CONECT   15   14
+CONECT   16   14
+CONECT   17   19   18
+CONECT   18   17
+CONECT   19   17
+CONECT   20   22   21
+CONECT   21   20
+CONECT   22   20
+CONECT   23   25   24
+CONECT   24   23
+CONECT   25   23
+CONECT   26   28   27
+CONECT   27   26
+CONECT   28   26
+CONECT   29   31   30
+CONECT   30   29
+CONECT   31   29
+CONECT   32   34   33
+CONECT   33   32
+CONECT   34   32
+CONECT   35   37   36
+CONECT   36   35
+CONECT   37   35
+CONECT   38   40   39
+CONECT   39   38
+CONECT   40   38
+CONECT   41   43   42
+CONECT   42   41
+CONECT   43   41
+CONECT   44   46   45
+CONECT   45   44
+CONECT   46   44
+CONECT   47   49   48
+CONECT   48   47
+CONECT   49   47
+END
